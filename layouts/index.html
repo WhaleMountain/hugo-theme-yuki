@@ -3,21 +3,9 @@
 <!-- Display image -->
 <div class="index-displayImg" style="background-image: url('{{ .Site.Params.displayImg | absURL }}')"></div>
 
-<!-- Social accounts -->
-<div class="index-line u-font">
-    {{- with .Site.Params.snsTitle -}}
-    <span class="index-line__content u-font">{{ . }}</span>
-    {{- end -}}
-</div>
-<div class="index-sns u-font">
-    {{ range .Site.Menus.social }}
-    <a class="index-sns__name" target="_blank" href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
-</div>
-
 <!-- Content list -->
 <div class="index-line u-font">
-    <span class="index-line__content u-font">Home</span>
+    <span class="index-line__content u-font">Posts</span>
 </div>
 <div class="index-posts">
     {{ $posts := where site.RegularPages "Type" "in" site.Params.mainSections }}
@@ -33,6 +21,16 @@
     </div>
 </div>
 
-
+<!-- Social accounts -->
+<div class="index-line u-font">
+    {{- with .Site.Params.snsTitle -}}
+    <span class="index-line__content u-font">{{ . }}</span>
+    {{- end -}}
+</div>
+<div class="index-sns u-font">
+    {{ range .Site.Menus.social }}
+    <a class="index-sns__name" target="_blank" href="{{ .URL }}">{{ .Name }}</a>
+    {{ end }}
+</div>
 
 {{ partial "footer.html" . }}
