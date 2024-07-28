@@ -6,7 +6,7 @@ let logo =  document.querySelector(".site-logo__wrap");
 let sticky = logo.offsetHeight;
 
 function fixNav() {
-    if (window.pageYOffset >= sticky) {
+    if (window.scrollY >= sticky) {
         navbar.classList.add("site-nav-fixed")
     } else {
         navbar.classList.remove("site-nav-fixed");
