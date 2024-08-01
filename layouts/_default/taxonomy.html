@@ -6,7 +6,7 @@
 
     <article>
         <div class="main-content__posts index-posts">
-            {{ range .Pages }}
+            {{ range .Paginator.Pages }}
             <div class="index-posts__list">
                 <div class="l-time"><a href="{{.Permalink}}">{{ .Date.Format "2006.01.02 15:04" }}</a></div>
                 <div class="l-title"><a href="{{.Permalink}}">{{ .Title }}</a></div>
