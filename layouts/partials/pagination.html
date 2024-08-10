@@ -34,13 +34,15 @@
     <ul>
 
         <!-- First page. -->
-        {{ with $pag.First }}
-        <li><a href="{{ .URL }}">&#60;&#60;</a></li>
-        {{ end }}
+        {{ if $pag.HasPrev }}
+            {{ with $pag.First }}
+            <li><a href="{{ .URL }}">&#60;&#60;</a></li>
+            {{ end }}
 
-        <!-- Previous page. -->
-        {{ with $pag.Prev }}
-        <li><a href="{{ .URL }}">&#60;</a></li>
+            <!-- Previous page. -->
+            {{ with $pag.Prev }}
+            <li><a href="{{ .URL }}">&#60;</a></li>
+            {{ end }}
         {{ end }}
 
         <!-- Page numbers. -->
@@ -97,13 +99,15 @@
         {{ end }}
 
         <!-- Next page. -->
-        {{ with $pag.Next }}
-        <li><a href="{{ .URL }}">&#62;</a></li>
-        {{ end }}
+        {{ if $pag.HasNext }}
+            {{ with $pag.Next }}
+            <li><a href="{{ .URL }}">&#62;</a></li>
+            {{ end }}
 
-        <!-- Last page. -->
-        {{ with $pag.Last }}
-        <li><a href="{{ .URL }}">&#62;&#62;</a></li>
+            <!-- Last page. -->
+            {{ with $pag.Last }}
+            <li><a href="{{ .URL }}">&#62;&#62;</a></li>
+            {{ end }}
         {{ end }}
 
     </ul>
