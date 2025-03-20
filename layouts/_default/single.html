@@ -2,9 +2,9 @@
 
 <div class="main-content">
     <div class="main-content__date">
-        <h4 id="date"> Published on &ensp;{{ .Date.Format "2006.01.02 15:04" }} </h4>
+        <h4 id="date"> Published on {{ .Date.Format "2006.01.02 15:04" }}</h4>
         {{ if ne .Date .Lastmod }}
-        <h4 id="date"> Edited on &ensp;&ensp;&ensp;&ensp;{{ .Lastmod.Format "2006.01.02 15:04" }} </h4>
+        <h4 id="date"> Edited on {{ .Lastmod.Format "2006.01.02 15:04" }}</h4>
         {{ end }}
     </div>
     <div class="main-content__title">
